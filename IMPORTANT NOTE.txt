@@ -1,0 +1,23 @@
+
+We used "SSRS , Microsoft Report Builder, Microsoft Freeform Report" tool to generate our Reports
+
+------------------------------------------------------------------------------------
+
+-> in folder "Stored Procedure Code" you have 5 files :
+
+1. Main DB Entities (9 tables) CRUD (9*4) = 36 stored
+2. (M:N) Relation tables (8 tables) CRUD  = 58 stored :
+	- get    : 3 * 8 = 24
+	- insert : 1 * 8 = 8
+	- delete : 3 * 8 = 24
+	- update : 2 (wasn't really necesary because of the fk constraints)
+	- 7 extra stored to help us do some logic with examination business logic
+
+3. Exam Generation , Correction , Answers = 5 stored
+4. The 6 required stored procedures = 6 stored 
+
+*** Total of 112 Stored Procedures ***
+
+-----------------------------------------------------------------------------------
+
+5. "please_start_with_me" file : this has a simulation of creating 5 exams for 5 different couses , and assigning 21 students to these exams (each exam has 10 questions) , resulting in 210 rows for student answers + 20 more for the the same student to test the report of getting his degrees in multiple courses. it also has exam correction for some of these students and model answer for exams. IF YOU WANT A QUICK TEST FOR THE REPORT STORED PROCEDURES YOU SHOULD START WITH THIS FILE :)
